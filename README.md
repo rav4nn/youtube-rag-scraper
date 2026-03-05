@@ -31,7 +31,7 @@ YouTube Channel → Metadata + Transcripts → RAG Chunks → Embeddings → FAI
 ### Scraping a YouTube Channel
 
 ```bash
-python -m youtube_scraper.main --channel @jameshoffmann --knowledge-base --workers 4
+python -m youtube_scraper.main --channel "@jameshoffmann" --knowledge-base --workers 4
 ```
 
 <p align="center">
@@ -140,7 +140,7 @@ export YOUTUBE_API_KEY=your_key_here
 ### Scrape a Channel
 
 ```bash
-python -m youtube_scraper.main --channel @jameshoffmann --workers 4
+python -m youtube_scraper.main --channel "@jameshoffmann" --workers 4
 ```
 
 ### Scrape a Playlist
@@ -158,14 +158,14 @@ python -m youtube_scraper.main --video https://youtu.be/dQw4w9WgXcQ
 ### Export as CSV or Parquet
 
 ```bash
-python -m youtube_scraper.main --channel @mkbhd --format csv --output mkbhd_dataset.csv
-python -m youtube_scraper.main --channel @mkbhd --format parquet --output mkbhd_dataset.parquet
+python -m youtube_scraper.main --channel "@mkbhd" --format csv --output mkbhd_dataset.csv
+python -m youtube_scraper.main --channel "@mkbhd" --format parquet --output mkbhd_dataset.parquet
 ```
 
 ### Build a Knowledge Base
 
 ```bash
-python -m youtube_scraper.main --channel @jameshoffmann --knowledge-base --output coffee_knowledge.json
+python -m youtube_scraper.main --channel "@jameshoffmann" --knowledge-base --output coffee_knowledge.json
 ```
 
 This generates:
@@ -261,7 +261,7 @@ sequenceDiagram
     participant EMB as Sentence Transformers
     participant DB as FAISS Index
 
-    U->>CLI: --channel @handle --knowledge-base
+    U->>CLI: --channel "@handle" --knowledge-base
     CLI->>YT: Resolve handle → UC channel ID
     CLI->>YT: Fetch all video IDs (uploads playlist)
     CLI->>YT: Batch fetch metadata (50/request)
