@@ -124,7 +124,10 @@ pip install sentence-transformers faiss-cpu numpy pandas pyarrow
 ### Set Your API Key
 
 ```bash
-# Windows
+# Windows (PowerShell)
+$env:YOUTUBE_API_KEY="your_key_here"
+
+# Windows (CMD)
 set YOUTUBE_API_KEY=your_key_here
 
 # macOS / Linux
