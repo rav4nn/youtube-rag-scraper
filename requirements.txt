@@ -1,0 +1,12 @@
+# Core dependencies (required)
+google-api-python-client>=2.0.0
+yt-dlp>=2024.0.0
+
+# AI / Knowledge Base (required for --knowledge-base and --ask)
+sentence-transformers>=2.2.0
+faiss-cpu>=1.7.0
+numpy>=1.24.0
+
+# Dataset export (required for --format parquet)
+pandas>=2.0.0
+pyarrow>=12.0.0

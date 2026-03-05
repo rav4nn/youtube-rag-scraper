@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Data and output files (potentially large / sensitive)
+*.json
+*.jsonl
+*.csv
+*.parquet
+*.npy
+*.faiss
+
+# Keep assets (screenshots)
+!assets/
+
+# VTT subtitle temp files
+*.vtt
+
+# Cookies (sensitive)
+cookies.txt
+cookies_old.txt
+
+# Old/scratch files
+scrape_youtube_old.py
+youtube_scraper.py
+scrape_youtube.py
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
