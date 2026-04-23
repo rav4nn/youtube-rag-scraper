@@ -23,6 +23,9 @@ ENV/
 *.npy
 *.faiss
 
+# Local generated outputs (knowledge bases, scraped data, cookies)
+local/
+
 # Keep assets (screenshots)
 !assets/
 

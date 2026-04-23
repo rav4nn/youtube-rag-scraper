@@ -136,6 +136,49 @@ export YOUTUBE_API_KEY=your_key_here
 
 > Get your free API key from the [Google Cloud Console](https://console.cloud.google.com/apis/credentials).
 
+### (Optional) Get a cookies.txt File
+
+YouTube throttles or blocks transcript downloads for age-restricted videos, members-only content, and sometimes just from heavy scraping. Passing a `cookies.txt` from a logged-in browser session lets `yt-dlp` authenticate as you and avoids these blocks.
+
+**Step 1 — Install a browser extension:**
+
+| Browser | Extension |
+|---------|-----------|
+| Chrome / Edge | [Get cookies.txt LOCALLY](https://chromewebstore.google.com/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc) |
+| Firefox | [cookies.txt](https://addons.mozilla.org/en-US/firefox/addon/cookies-txt/) |
+
+**Step 2 — Export cookies from YouTube:**
+
+1. Log in to [youtube.com](https://www.youtube.com) in your browser
+2. Click the extension icon while on the YouTube tab
+3. Click **Export** — save the file as `cookies.txt`
+
+**Step 3 — Place or reference the file:**
+
+Put `cookies.txt` in the project root (it is gitignored by default), or in the `local/` folder and point to it explicitly:
+
+```bash
+# Default — looks for cookies.txt in the current directory
+python -m youtube_scraper.main --channel "@jameshoffmann" --knowledge-base
+
+# Explicit path
+python -m youtube_scraper.main --channel "@jameshoffmann" --cookies local/cookies.txt
+```
+
+> **Note:** `cookies.txt` is sensitive — it grants access to your YouTube account. Never commit it. It is already covered by `.gitignore`.
+
+---
+
+## 📁 Local Output Files
+
+All generated outputs (scraped JSON, FAISS indexes, embeddings) land in the directory you run the script from. To keep the project root clean, use the `local/` folder as your working output directory — it is gitignored:
+
+```bash
+python -m youtube_scraper.main --channel "@jameshoffmann" --knowledge-base --output local/coffee_knowledge.json
+```
+
+This puts all generated files (`coffee_knowledge.json`, `*_rag.jsonl`, `*.npy`, `*.faiss`) inside `local/`, which is never committed.
+
 ---
 
 ## 💻 Usage
